@@ -50,6 +50,7 @@ form.addEventListener('submit', async (e) => {
       <h3>${data.city}, ${data.countryCode}</h3>
       <p>Temperature: ${data.temperature}°C</p>
       <p>Description: ${data.description}</p>
+      <p> <img src="${data.iconUrl}" alt="Weather icon" style="width: 40%"></p>
       <p>Local Time: ${data.localTime}</p>
     `;
     saveBtn.style.display = 'inline-block'; // show save button
@@ -132,11 +133,19 @@ toggleDisplayLogBtn.addEventListener('click', async () => {
         // Display each log
         data.forEach((logData) => {
           const logDiv = document.createElement('div');
-
           // Log details
+          // <img src="${data.iconUrl}" alt="Weather icon"></img>
+          const icon = document.createElement('img');
+
           const weatherHeader = document.createElement('h3');
           weatherHeader.style.display = 'inline';
-          weatherHeader.textContent = `${logData.city}, ${logData.countryCode}`;
+          weatherHeader.textContent = `${logData.city}, ${logData.countryCode} `;
+          icon.src = logData.iconUrl;
+          icon.alt = 'Weather Icon';
+          icon.style.width = '40px';
+          icon.style.height = '40px';
+          icon.style.verticalAlign = 'middle';
+          weatherHeader.appendChild(icon);
 
           const deleteBtn = document.createElement('button');
           deleteBtn.className = 'deleteBtn';

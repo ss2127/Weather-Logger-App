@@ -112,7 +112,7 @@ button:hover {
 #result {
   opacity: 0;
   transform: translateY(20px);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(8px);
   padding: 25px;
   border-radius: 16px;

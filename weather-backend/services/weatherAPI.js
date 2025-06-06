@@ -27,8 +27,8 @@ const fetchWeatherByCity = async (city) => {
     countryCode: sys.country,
     temperature: Math.round(main.temp - 273.15),
     description: weather[0].description,
+    iconUrl: `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`,
     localTime: localTime,
   };
 };
-fetchWeatherByCity('Tokyo');
 module.exports = fetchWeatherByCity;

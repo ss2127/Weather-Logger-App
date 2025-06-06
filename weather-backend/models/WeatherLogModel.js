@@ -6,6 +6,7 @@ const weatherLogSchema = new mongoose.Schema({
   description: String,
   localTime: String,
   countryCode: String,
+  iconUrl: String,
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
