@@ -2,8 +2,8 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 
 // Helper to sign JWT
-const signToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
+const signToken = (user) => {
+  return jwt.sign({ id: user._id, name: user.name }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 };
@@ -20,7 +20,7 @@ exports.signup = async (req, res) => {
       confirmPassword,
     });
 
-    const token = signToken(newUser._id);
+    const token = signToken(newUser);
 
     res.status(201).json({
       status: 'success',
@@ -48,7 +48,7 @@ exports.login = async (req, res) => {
     });
   }
 
-  const user = await User.findOne({ email }).select('+password');
+  const user = await User.findOne({ email }).select('+password').select('name');
 
   if (!user || !(await user.correctPassword(password, user.password))) {
     return res.status(401).json({
@@ -57,7 +57,7 @@ exports.login = async (req, res) => {
     });
   }
 
-  const token = signToken(user._id);
+  const token = signToken(user);
 
   res.status(200).json({
     status: 'success',

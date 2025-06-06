@@ -3,7 +3,12 @@ if (!localStorage.getItem('token')) {
   alert('You must log in first.');
   window.location.href = 'login.html';
 }
+const payload = JSON.parse(atob(localStorage.getItem('token').split('.')[1]));
+console.log(payload);
+const username = payload.name || 'User';
 
+// Insert username into HTML
+document.getElementById('display-username').textContent = username;
 // DOM Elements
 const form = document.getElementById('weatherForm');
 const resultDiv = document.getElementById('result');

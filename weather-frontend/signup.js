@@ -32,7 +32,7 @@ signupForm.addEventListener('submit', async (e) => {
 
     alert('Signup successful!');
     localStorage.setItem('token', data.token);
-    window.location.href = 'index.html'; // change to dashboard or main app page
+    window.location.href = 'login.html'; // change to dashboard or main app page
   } catch (err) {
     spinner.style.display = 'none';
     alert(err.message);

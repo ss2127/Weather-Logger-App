@@ -30,7 +30,13 @@ h1 {
   text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
   animation: fadeInDown 1s ease-out;
 }
-
+h2 {
+  font-size: 2rem;
+  color: #00f7ff;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+  animation: fadeInDown 1.05s ease-out;
+}
 /* Form */
 form {
   display: flex;
