@@ -20,7 +20,7 @@ signupForm.addEventListener('submit', async (e) => {
 
   try {
     const res = await fetch(
-      'https://weather-log-backend.onrender.com/api/v1/users/signup',
+      'https://weather-log-api.onrender.com/api/v1/users/signup',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

@@ -29,7 +29,7 @@ form.addEventListener('submit', async (e) => {
   try {
     //
     const res = await fetch(
-      'https://weather-log-backend.onrender.com/api/v1/weatherLogs/display',
+      'https://weather-log-api.onrender.com/api/v1/weatherLogs/display',
       {
         method: 'POST',
         headers: {
@@ -70,7 +70,7 @@ saveBtn.addEventListener('click', async () => {
 
   try {
     const res = await fetch(
-      'https://weather-log-backend.onrender.com/api/v1/weatherLogs/save',
+      'https://weather-log-api.onrender.com/api/v1/weatherLogs/save',
       {
         method: 'POST',
         headers: {
@@ -104,7 +104,7 @@ toggleDisplayLogBtn.addEventListener('click', async () => {
   const token = localStorage.getItem('token');
   try {
     const res = await fetch(
-      'https://weather-log-backend.onrender.com/api/v1/weatherLogs',
+      'https://weather-log-api.onrender.com/api/v1/weatherLogs',
       {
         method: 'GET',
         headers: {
@@ -190,7 +190,7 @@ toggleDisplayLogBtn.addEventListener('click', async () => {
             try {
               const id = this.dataset.id;
               const res = await fetch(
-                `https://weather-log-backend.onrender.com/api/v1/weatherLogs/save/${id}`,
+                `https://weather-log-api.onrender.com/api/v1/weatherLogs/save/${id}`,
                 {
                   method: 'DELETE',
                   headers: {
@@ -214,7 +214,7 @@ toggleDisplayLogBtn.addEventListener('click', async () => {
         deleteAllBtn.addEventListener('click', async function () {
           try {
             const res = await fetch(
-              'https://weather-log-backend.onrender.com/api/v1/weatherLogs',
+              'https://weather-log-api.onrender.com/api/v1/weatherLogs',
               {
                 method: 'GET',
                 headers: {
@@ -237,7 +237,7 @@ toggleDisplayLogBtn.addEventListener('click', async () => {
             if (!confirmed) return;
 
             const delRes = await fetch(
-              'https://weather-log-backend.onrender.com/api/v1/weatherLogs/save',
+              'https://weather-log-api.onrender.com/api/v1/weatherLogs/save',
               {
                 method: 'DELETE',
                 headers: {
@@ -277,7 +277,7 @@ toggleDisplayLogBtn.addEventListener('click', async () => {
 logoutBtn.addEventListener('click', async () => {
   try {
     const res = await fetch(
-      'https://weather-log-backend.onrender.com/api/v1/users/logout',
+      'https://weather-log-api.onrender.com/api/v1/users/logout',
       {
         method: 'GET',
         headers: {
