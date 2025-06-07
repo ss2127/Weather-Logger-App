@@ -1,6 +1,6 @@
 const express = require('express');
 const helmet = require('helmet');
-const xss = require('xss-clean');
+// const xss = require('xss-clean');
 const mongoSanitize = require('express-mongo-sanitize');
 const cors = require('cors');
 
@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json({ limit: '10kb' }));
 app.use(cors());
 app.use(helmet());
-app.use(xss());
+// app.use(xss());
 app.use(mongoSanitize());
 
 // ========== Routes ==========
