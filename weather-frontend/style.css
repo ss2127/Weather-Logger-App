@@ -215,7 +215,7 @@ button:hover {
     border-radius: 10px;
     color: #e0f7fa;
     font-size: 16px;
-    width: 180px;
+    width: 200px;
     backdrop-filter: blur(4px);
     transition: border 0.3s ease, box-shadow 0.3s ease;
   }
