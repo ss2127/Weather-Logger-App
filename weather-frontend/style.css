@@ -189,3 +189,45 @@ button:hover {
     opacity: 1;
   }
 }
+
+/* Medai Query */
+@media only screen and (max-width: 400px) {
+  /* Header */
+  h1 {
+    font-size: 2rem;
+    color: #00f7ff;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    animation: fadeInDown 1s ease-out;
+  }
+  h2 {
+    font-size: 1.5rem;
+    color: #00f7ff;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    animation: fadeInDown 1.05s ease-out;
+  }
+
+  input[type='text'] {
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #00f7ff;
+    border-radius: 10px;
+    color: #e0f7fa;
+    font-size: 16px;
+    width: 180px;
+    backdrop-filter: blur(4px);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  button {
+    padding: 12px 15px;
+    background-color: #00f7ff;
+    color: #0f2027;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+}
